@@ -52,7 +52,7 @@ public class Radix {
         for(int i=1; i< countArr.length; i++){
             countArr[i] += countArr[i-1];
         }
-        //int i=0; i<temp.length;i++ don't work
+        //int i=0; i<temp.length;i++ don't worked
         for(int i = temp.length - 1; i >= 0; i--){
             outputArr[countArr[temp[i]] - 1] = arr[i];
             countArr[temp[i]]--;
