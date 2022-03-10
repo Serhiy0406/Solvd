@@ -34,8 +34,6 @@ public class Radix {
         int[] outputArr = new int[arr.length];
         for(int i=0; i< arr.length; i++){
             outputArr[i] = arr[i];
-        }
-        for (int i = 0; i < arr.length; i++){
             temp[i] = arr[i]/(int)(Math.pow(10, x))%10;
         }
         int max = FindMax(temp);
