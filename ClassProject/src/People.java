@@ -18,12 +18,10 @@ public class People {
         return surname;
     }
 
-    public People(){
-        setName("Tom");
-        setSurname("Watson");
-    }
+    public People(){}
+
     public People(String name, String surname){
-        setName(name);
-        setSurname(surname);
+        this.name = name;
+        this.surname = surname;
     }
 }

@@ -19,12 +19,10 @@ public class Engine {
         return model;
     }
 
-    public Engine(){
-        setModel("Stirling");
-        setFuel(new Fuel());
-    }
+    public Engine(){}
+
     public Engine(String model, Fuel fuel){
-        setFuel(fuel);
-        setModel(model);
+        this.model = model;
+        this.fuel = fuel;
     }
 }

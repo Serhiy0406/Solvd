@@ -27,9 +27,11 @@ public class Country {
         return district;
     }
 
-    public Country(){
-        setName("Ukraine");
-        setCity("Chernivtsi");
-        setDistrict("Pershotravnevyy");
+    public Country(){}
+
+    public Country(String name, String city, String district){
+        this.name = name;
+        this.city = city;
+        this.district = district;
     }
 }

@@ -19,15 +19,12 @@ public class Passenger extends People{
     }
 
 
-    public Passenger(){
-       super();
-       setCash(new Cash());
-    }
+    public Passenger(){}
 
     public Passenger(String name, String surname, int pathToRide, Cash cash){
         super(name, surname);
-        setPathToRide(pathToRide);
-        setCash(cash);
+        this.pathToRide = pathToRide;
+        this.cash = cash;
     }
 
     public void payForTaxi(Service service){

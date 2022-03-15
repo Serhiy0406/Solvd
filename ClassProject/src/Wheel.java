@@ -19,17 +19,10 @@ public class Wheel {
         return season;
     }
 
-    public Wheel(){
-        setDiameter(20.0);
-        String[] seasonArr = {
-                "Winter", "Winter", "Spring", "Spring", "Spring", "Summer",
-                "Summer", "Summer", "Autumn", "Autumn", "Autumn", "Winter"
-        };
-        setSeason(seasonArr[LocalDate.now().getMonthValue()-1]);
-    }
+    public Wheel(){}
 
     public Wheel(String season, double diameter){
-        setSeason(season);
-        setDiameter(diameter);
+        this.diameter = diameter;
+        this.season = season;
     }
 }

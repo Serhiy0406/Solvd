@@ -16,12 +16,10 @@ public class License {
         return this.dateTo;
     }
 
-    public License(){
-        this.dateFrom = LocalDate.now();
-        this.dateTo = dateFrom.plusYears(10);
-    }
+    public License(){}
+
     public License(LocalDate dateFrom, LocalDate dateTo){
-        setDateFrom(dateFrom);
-        setDateTo(dateTo);
+        this.dateFrom = dateFrom;
+        this.dateTo = dateTo;
     }
 }

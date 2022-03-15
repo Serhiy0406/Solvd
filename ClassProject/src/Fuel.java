@@ -19,12 +19,10 @@ public class Fuel {
         return pricePerLiter;
     }
 
-    public Fuel(){
-        setName("Diesel");
-        setPricePerLiter(46.99);
-    }
+    public Fuel(){}
+
     public Fuel(String name, double pricePerLiter){
-        setName(name);
-        setPricePerLiter(pricePerLiter);
+        this.name = name;
+        this.pricePerLiter = pricePerLiter;
     }
 }

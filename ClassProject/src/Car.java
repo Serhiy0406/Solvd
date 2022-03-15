@@ -45,18 +45,14 @@ public class Car {
         return wheels;
     }
 
-    public Car(){
-        setMark("Opel");
-        setEngine(new Engine());
-        setWheels(new Wheel[4]);
-        setFuelAmount(25);
-        setTankVolume(40);
-    }
-    public Car(double tankVolume, double fuelAmount, Engine engine, Wheel[] wheels){
-        setEngine(engine);
-        setWheels(wheels);
-        setFuelAmount(fuelAmount);
-        setTankVolume(tankVolume);
+    public Car(){}
+
+    public Car(double tankVolume, double fuelAmount, Engine engine, Wheel[] wheels, String mark){
+        this.mark = mark;
+        this.engine = engine;
+        this.wheels = wheels;
+        this.fuelAmount = fuelAmount;
+        this.tankVolume = tankVolume;
     }
 
     public void startPath(){

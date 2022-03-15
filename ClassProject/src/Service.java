@@ -45,16 +45,12 @@ public class Service {
         return prizePerMeter;
     }
 
-    public Service(){
-        setName("Uklon");
-        setPhone("+380993482488");
-        setPrizePerMeter(0.1);
-        setIncome(0);
-    }
+    public Service(){}
+
     public Service(String name, String phone, double prizePerMeter, double income){
-        setIncome(income);
-        setPrizePerMeter(prizePerMeter);
-        setName(name);
-        setPhone(phone);
+        this.name = name;
+        this.phone = phone;
+        this.prizePerMeter = prizePerMeter;
+        this.income = income;
     }
 }

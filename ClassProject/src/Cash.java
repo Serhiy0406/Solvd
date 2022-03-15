@@ -19,11 +19,11 @@ public class Cash {
     }
 
     public Cash(){
-        setType("Card");
-        setAmount(12000);
+        this.type = "Card";
+        this.amount = 12000;
     }
     public Cash(String type, double amount){
-        setAmount(amount);
-        setType(type);
+        this.type = type;
+        this.amount = amount;
     }
 }
