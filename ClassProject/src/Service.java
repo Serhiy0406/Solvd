@@ -53,4 +53,11 @@ public class Service {
         this.prizePerMeter = prizePerMeter;
         this.income = income;
     }
+
+    public void makeOrder(Passenger passenger, int metersToPassenger){
+        Order order = new Order(passenger, metersToPassenger);
+    }
+    public void sendOrder(Driver driver, Car car, Order order){
+        driver.takeOrder(order, car, this);
+    }
 }

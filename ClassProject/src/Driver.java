@@ -43,4 +43,14 @@ public class Driver extends People {
             refuelCar(car, service);
         }
     }
+    public void takeOrder(Order order, Car car, Service service){
+        double tempFuelAmount = car.getFuelAmount() - order.getMetersToPassenger() * 0.001;// 1 liter to 1000 meters
+        if(tempFuelAmount >= 0){
+            car.setFuelAmount(tempFuelAmount);
+        }else{
+            refuelCar(car, service);
+            car.setFuelAmount(tempFuelAmount);
+        }
+        driveThePassenger(order.getPassenger(), service, car);
+    }
 }
