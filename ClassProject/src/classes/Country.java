@@ -1,7 +1,17 @@
+package classes;
+
 public class Country {
     private String name;
     private String city;
     private String district;
+
+    public Country(){}
+
+    public Country(String name, String city, String district){
+        this.name = name;
+        this.city = city;
+        this.district = district;
+    }
 
     public void setName(String name){
         this.name = name;
@@ -27,11 +37,12 @@ public class Country {
         return district;
     }
 
-    public Country(){}
-
-    public Country(String name, String city, String district){
-        this.name = name;
-        this.city = city;
-        this.district = district;
+    @Override
+    public String toString() {
+        return "Country{\n" +
+                " Name: " + getName() +
+                "\n city : " + getCity() +
+                "\n district : " + getDistrict() +
+                "\n}";
     }
 }

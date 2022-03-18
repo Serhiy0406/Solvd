@@ -1,6 +1,15 @@
+package classes;
+
 public class Cash {
     private String type;
     private double amount;
+
+    public Cash(){}
+
+    public Cash(String type, double amount){
+        this.type = type;
+        this.amount = amount;
+    }
 
     public void setAmount(double amount) {
         this.amount = amount;
@@ -18,12 +27,11 @@ public class Cash {
         return type;
     }
 
-    public Cash(){
-        this.type = "Card";
-        this.amount = 12000;
-    }
-    public Cash(String type, double amount){
-        this.type = type;
-        this.amount = amount;
+    @Override
+    public  String toString(){
+        return "Cash{\n" +
+                "\ncash type: " + getType() +
+                "\ncash amount = " + getAmount() +
+                "\n}";
     }
 }

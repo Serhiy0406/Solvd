@@ -1,7 +1,15 @@
+package classes;
+
 public class Fuel {
     private String name;
     private double pricePerLiter;
 
+    public Fuel(){}
+
+    public Fuel(String name, double pricePerLiter){
+        this.name = name;
+        this.pricePerLiter = pricePerLiter;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -19,10 +27,11 @@ public class Fuel {
         return pricePerLiter;
     }
 
-    public Fuel(){}
-
-    public Fuel(String name, double pricePerLiter){
-        this.name = name;
-        this.pricePerLiter = pricePerLiter;
+    @Override
+    public String toString() {
+        return "Fuel{\n" +
+                "\n Name : " + getName() +
+                "\n Prize per liter = " + getPricePerLiter() +
+                "\n}";
     }
 }

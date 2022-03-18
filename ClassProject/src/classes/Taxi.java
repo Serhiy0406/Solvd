@@ -1,7 +1,11 @@
+package classes;
+
 public class Taxi {
     private Car car;
     private Driver driver;
     private Service service;
+
+    public Taxi(){}
 
     public void setCar(Car car) {
         this.car = car;
@@ -26,6 +30,4 @@ public class Taxi {
     public Service getService() {
         return service;
     }
-
-    public Taxi(){}
 }

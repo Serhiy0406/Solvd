@@ -1,6 +1,15 @@
-public class People {
+package classes;
+
+public abstract class People {
     private String name;
     private String surname;
+
+    public People(){}
+
+    public People(String name, String surname){
+        this.name = name;
+        this.surname = surname;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -16,12 +25,5 @@ public class People {
 
     public String getSurname() {
         return surname;
-    }
-
-    public People(){}
-
-    public People(String name, String surname){
-        this.name = name;
-        this.surname = surname;
     }
 }
