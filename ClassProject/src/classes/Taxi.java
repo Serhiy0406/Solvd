@@ -7,6 +7,12 @@ public class Taxi {
 
     public Taxi(){}
 
+    public Taxi(Car car, Driver driver, Service service){
+        this.car = car;
+        this.driver = driver;
+        this.service = service;
+    }
+
     public void setCar(Car car) {
         this.car = car;
     }

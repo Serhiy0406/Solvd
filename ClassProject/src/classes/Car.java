@@ -1,6 +1,6 @@
 package classes;
 
-public class Car {
+public class Car extends Vehicle {
     private String mark;
     private Engine engine;
     private Wheel[] wheels;
@@ -9,7 +9,9 @@ public class Car {
 
     public Car(){}
 
-    public Car(double tankVolume, double fuelAmount, Engine engine, Wheel[] wheels, String mark){
+    public Car(double tankVolume, double fuelAmount, Engine engine,
+               Wheel[] wheels, String mark, Category category){
+        super(category);
         this.mark = mark;
         this.engine = engine;
         this.wheels = wheels;
@@ -61,4 +63,15 @@ public class Car {
         System.out.println("Car is started by key!");
     }
 
+    @Override
+    public String toString() {
+        return "Car{\n" +
+                " Mark : " + getMark() +
+                "\n" + getCategory() +
+                "\n" + getEngine() +
+                "\n" + getWheels() +
+                "\n fuel amount =" + getFuelAmount() +
+                "\n tank volume = " + getTankVolume() +
+                "\n}";
+    }
 }
