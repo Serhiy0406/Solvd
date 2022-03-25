@@ -2,6 +2,7 @@ package classes;
 
 import java.time.LocalDate;
 public class Wheel {
+    final static int count = 4;
     private String season;
     private double diameter;
 
@@ -28,9 +29,14 @@ public class Wheel {
         return season;
     }
 
+    public static int getCount() {
+        return count;
+    }
+
     @Override
     public String toString() {
         return "Wheel {\n" +
+                " count of wheels : " + getCount() +
                 " season for : " + getSeason() +
                 "\n diameter = " + getDiameter() +
                 "\n}";

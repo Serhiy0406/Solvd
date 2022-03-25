@@ -1,6 +1,9 @@
 package classes;
 
-public class Service {
+import interfaces.IService;
+
+public class Service implements IService {
+
     private String name;
     private String phone;
     private double prizePerMeter;
@@ -10,12 +13,14 @@ public class Service {
 
     public Service(){}
 
-    public Service(String name, String phone, double prizePerMeter, double income){
+    public Service(String name, String phone, double prizePerMeter, double income,
+                   Country country, Order order){
         this.name = name;
         this.phone = phone;
         this.prizePerMeter = prizePerMeter;
         this.income = income;
-        this.order = new Order();
+        this.country = country;
+        this.order = order;
     }
 
     public void setOrder(Order order) {

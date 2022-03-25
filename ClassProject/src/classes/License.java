@@ -1,7 +1,9 @@
 package classes;
 
 import java.time.LocalDate;
+
 public class License {
+
     private LocalDate dateFrom;
     private LocalDate dateTo;
 

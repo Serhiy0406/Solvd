@@ -1,6 +1,9 @@
 package classes;
 
-public class Passenger extends People{
+import interfaces.IPassenger;
+
+public final class Passenger extends People implements IPassenger {
+
     private double pathToRide;
     private Cash cash;
 

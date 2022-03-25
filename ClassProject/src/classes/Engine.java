@@ -1,6 +1,7 @@
 package classes;
 
 public class Engine {
+
     private String model;
     private Fuel fuel;
 

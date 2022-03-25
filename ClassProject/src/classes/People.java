@@ -1,6 +1,7 @@
 package classes;
 
 public abstract class People {
+
     private String name;
     private String surname;
 

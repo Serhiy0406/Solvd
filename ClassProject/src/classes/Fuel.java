@@ -1,6 +1,7 @@
 package classes;
 
 public class Fuel {
+
     private String name;
     private double pricePerLiter;
 

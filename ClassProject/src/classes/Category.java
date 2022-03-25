@@ -1,6 +1,7 @@
 package classes;
 
 public class Category {
+
     private String name;
     private int maxPassengerCapacity;
     private double lengthMeters;

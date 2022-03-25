@@ -1,6 +1,7 @@
 package classes;
 
 public class Country {
+
     private String name;
     private String city;
     private String district;

@@ -1,6 +1,7 @@
 package classes;
 
 public class Order {
+
     private Passenger passenger;
     private int metersToPassenger;
 

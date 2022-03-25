@@ -1,6 +1,7 @@
 package classes;
 
 public class Cash {
+
     private String type;
     private double amount;
 

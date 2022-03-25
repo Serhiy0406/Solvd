@@ -1,6 +1,8 @@
 package classes;
 
-public class Driver extends People {
+import interfaces.IDriver;
+
+public final class Driver extends People implements IDriver {
 
     private License license;
 
