@@ -6,9 +6,10 @@ public class Taxi {
     private Driver driver;
     private Service service;
 
-    public Taxi(){}
+    public Taxi() {
+    }
 
-    public Taxi(Car car, Driver driver, Service service){
+    public Taxi(Car car, Driver driver, Service service) {
         this.car = car;
         this.driver = driver;
         this.service = service;

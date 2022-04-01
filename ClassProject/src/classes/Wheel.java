@@ -1,14 +1,16 @@
 package classes;
 
 import java.time.LocalDate;
+
 public class Wheel {
     final static int count = 4;
     private String season;
     private double diameter;
 
-    public Wheel(){}
+    public Wheel() {
+    }
 
-    public Wheel(String season, double diameter){
+    public Wheel(String season, double diameter) {
         this.diameter = diameter;
         this.season = season;
     }

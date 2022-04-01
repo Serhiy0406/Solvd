@@ -1,37 +1,53 @@
 package classes;
 
+import exceptions.InvalidStringException;
+import org.apache.commons.lang3.StringUtils;
+
 public class Country {
 
     private String name;
     private String city;
     private String district;
 
-    public Country(){}
+    public Country() {
+    }
 
-    public Country(String name, String city, String district){
+    public Country(String name, String city, String district) {
         this.name = name;
         this.city = city;
         this.district = district;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setName(String name) throws InvalidStringException {
+        if (StringUtils.isEmpty(name)) {
+            throw new InvalidStringException("Name of country can't be null");
+        } else {
+            this.name = name;
+        }
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setCity(String city) throws InvalidStringException {
+        if (StringUtils.isEmpty(city)) {
+            throw new InvalidStringException("Name of city can't be null");
+        } else {
+            this.city = city;
+        }
     }
 
     public String getCity() {
         return city;
     }
 
-    public void setDistrict(String district) {
-        this.district = district;
+    public void setDistrict(String district) throws InvalidStringException {
+        if (StringUtils.isEmpty(district)) {
+            throw new InvalidStringException("Name of district can't be null");
+        } else {
+            this.district = district;
+        }
     }
 
     public String getDistrict() {

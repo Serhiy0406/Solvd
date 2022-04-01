@@ -7,10 +7,11 @@ public class Category {
     private double lengthMeters;
     private double widthMeters;
 
-    public Category(){}
+    public Category() {
+    }
 
     public Category(String name, int maxPassengerCapacity,
-                    double lengthMeters, double widthMeters){
+                    double lengthMeters, double widthMeters) {
         this.name = name;
         this.lengthMeters = lengthMeters;
         this.maxPassengerCapacity = maxPassengerCapacity;

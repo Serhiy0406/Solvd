@@ -7,9 +7,10 @@ public class License {
     private LocalDate dateFrom;
     private LocalDate dateTo;
 
-    public License(){}
+    public License() {
+    }
 
-    public License(LocalDate dateFrom, LocalDate dateTo){
+    public License(LocalDate dateFrom, LocalDate dateTo) {
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
     }
@@ -18,7 +19,7 @@ public class License {
         this.dateFrom = dateFrom;
     }
 
-    public LocalDate getDateFrom(){
+    public LocalDate getDateFrom() {
         return this.dateFrom;
     }
 
@@ -26,7 +27,7 @@ public class License {
         this.dateTo = dateTo;
     }
 
-    public LocalDate getDateTo(){
+    public LocalDate getDateTo() {
         return this.dateTo;
     }
 

@@ -7,10 +7,11 @@ public class Car extends Vehicle {
     private Wheel wheels;
 
 
-    public Car(){}
+    public Car() {
+    }
 
     public Car(double tankVolume, double fuelAmount, Engine engine,
-               Wheel wheels, String mark, Category category){
+               Wheel wheels, String mark, Category category) {
         super(category, fuelAmount, tankVolume);
         this.mark = mark;
         this.engine = engine;

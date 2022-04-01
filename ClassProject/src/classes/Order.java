@@ -5,9 +5,10 @@ public class Order {
     private Passenger passenger;
     private int metersToPassenger;
 
-    public Order(){}
+    public Order() {
+    }
 
-    public Order(Passenger passenger, int metersToPassenger){
+    public Order(Passenger passenger, int metersToPassenger) {
         this.metersToPassenger = metersToPassenger;
         this.passenger = passenger;
     }

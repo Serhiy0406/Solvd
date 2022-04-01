@@ -1,13 +1,17 @@
 package classes;
 
+import exceptions.InvalidStringException;
+import org.apache.commons.lang3.StringUtils;
+
 public class Engine {
 
     private String model;
     private Fuel fuel;
 
-    public Engine(){}
+    public Engine() {
+    }
 
-    public Engine(String model, Fuel fuel){
+    public Engine(String model, Fuel fuel) {
         this.model = model;
         this.fuel = fuel;
     }
@@ -20,8 +24,12 @@ public class Engine {
         return fuel;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setModel(String model) throws InvalidStringException {
+        if (StringUtils.isEmpty(model)) {
+            throw new InvalidStringException("Name of model can't be empty");
+        } else {
+            this.model = model;
+        }
     }
 
     public String getModel() {

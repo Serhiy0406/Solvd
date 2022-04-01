@@ -1,5 +1,6 @@
 package classes;
 
+import exceptions.FuelAmountException;
 import interfaces.IMachine;
 
 public abstract class Vehicle implements IMachine {
@@ -8,7 +9,8 @@ public abstract class Vehicle implements IMachine {
     protected double fuelAmount;
     protected double tankVolume;
 
-    public Vehicle(){}
+    public Vehicle() {
+    }
 
     public Vehicle(Category category, double fuelAmount, double tankVolume) {
         this.category = category;
@@ -20,6 +22,10 @@ public abstract class Vehicle implements IMachine {
         this.category = category;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
     public void setTankVolume(double tankVolume) {
         this.tankVolume = tankVolume;
     }
@@ -28,18 +34,28 @@ public abstract class Vehicle implements IMachine {
         return tankVolume;
     }
 
-    public void setFuelAmount(double fuelAmount) {
-        this.fuelAmount = fuelAmount;
+    public void setFuelAmount(double fuelAmount) throws FuelAmountException {
+        if(fuelAmount > getTankVolume()){
+            throw new FuelAmountException("Amount of fuel must be less than tank volume("+getTankVolume()+")");
+        }else{
+            this.fuelAmount = fuelAmount;
+        }
     }
 
     public double getFuelAmount() {
         return fuelAmount;
     }
 
-    public Category getCategory() {
-        return category;
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "category=" + category +
+                ", fuelAmount=" + fuelAmount +
+                ", tankVolume=" + tankVolume +
+                '}';
     }
 
+    @Override
     final public void startPath() {
         System.out.println("Car started the path!");
     }
