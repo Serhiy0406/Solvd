@@ -1,9 +1,15 @@
 package classes;
 
 import exceptions.InvalidValueException;
+
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import interfaces.IPassenger;
 
 public final class Passenger extends People implements IPassenger {
+
+    private static final Logger LOGGER = LogManager.getLogger("Passenger");
 
     public static final double TEMP_SUM = 0.7;
     private double pathToRide;
@@ -50,9 +56,9 @@ public final class Passenger extends People implements IPassenger {
             double tempCash = getCash().getAmount() - tempSum;
             getCash().setAmount(tempCash);
             service.setIncome(tempIncome + tempSum);
-            System.out.println("Payment was success! classes.Passenger had enough money!");
+            LOGGER.info("Payment was success! Passenger had enough money!");
         } else {
-            System.out.println("Payment was failed! classes.Passenger hadn't enough money!");
+            LOGGER.warn("Payment was failed! Passenger hadn't enough money!");
         }
     }
 
@@ -67,3 +73,4 @@ public final class Passenger extends People implements IPassenger {
                 "\n}";
     }
 }
+

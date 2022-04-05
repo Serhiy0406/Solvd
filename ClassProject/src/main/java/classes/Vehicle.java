@@ -1,9 +1,14 @@
 package classes;
 
 import exceptions.FuelAmountException;
+
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import interfaces.IMachine;
 
 public abstract class Vehicle implements IMachine {
+    private static final Logger LOGGER = LogManager.getLogger("Vehicle");
 
     protected Category category;
     protected double fuelAmount;
@@ -57,6 +62,6 @@ public abstract class Vehicle implements IMachine {
 
     @Override
     final public void startPath() {
-        System.out.println("Car started the path!");
+        LOGGER.info("Car started the path!");
     }
 }

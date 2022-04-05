@@ -1,21 +1,21 @@
 package classes;
 
-import exceptions.InvalidValueException;
-import org.apache.log4j.Logger;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.time.LocalDate;
 
-import org.apache.commons.lang3.StringUtils;
-
 public class Main {
 
-    private static Logger logger = Logger.getLogger(Main.class);
+    private static final Logger LOGGER = LogManager.getLogger(classes.Main.class);
 
-    public static void main(String[] args) throws InvalidValueException {
+    public static void main(String[] args) {
         try {
-            logger.info("its work");
-
-            System.out.println(StringUtils.isEmpty(""));
+            BasicConfigurator.configure();
+            LOGGER.info("its work");
+            LOGGER.error("We've just greeted the user!");
+            LOGGER.fatal("We've just greeted the user!");
             Cash cash = new Cash("Card", 25000);
             Passenger passenger = new Passenger("Tom", "Watson", 250, cash);
 
@@ -32,10 +32,11 @@ public class Main {
             Engine engine = new Engine("someModel", diesel);
             Wheel wheel = new Wheel("Winter", 50);
 
-            System.out.println(passenger);
+            //System.out.println(passenger);
+            LOGGER.info(passenger.toString());
         } catch (Exception exception) {
-            System.out.println("Exception: " + exception.getMessage());
-            logger.error("Exception: " + exception.getMessage());
+            //System.out.println("Exception: " + exception.getMessage());
+            LOGGER.error("Exception: " + exception.getMessage());
         }
     }
 }

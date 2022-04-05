@@ -2,6 +2,7 @@ package classes;
 
 import exceptions.InvalidStringException;
 import exceptions.InvalidValueException;
+
 import org.apache.commons.lang3.StringUtils;
 
 public class Fuel {

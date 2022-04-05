@@ -2,9 +2,15 @@ package classes;
 
 import exceptions.FuelAmountException;
 import exceptions.InvalidValueException;
+
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import interfaces.IDriver;
 
 public final class Driver extends People implements IDriver {
+
+    private static final Logger LOGGER = LogManager.getLogger("Driver");
 
     private License license;
 
@@ -32,11 +38,10 @@ public final class Driver extends People implements IDriver {
         if (neededCash <= tempIncome) {
             service.setIncome(tempIncome - neededCash);
             car.setFuelAmount(neededFuel + car.getFuelAmount());
-            System.out.println("Car was successfully refueled");
+            LOGGER.info("Car was successfully refueled");
         } else {
-            System.out.println("There is not enough of income to pay for fuel");
+            LOGGER.warn("There is not enough of income to pay for fuel");
         }
-
     }
 
     @Override
@@ -45,12 +50,10 @@ public final class Driver extends People implements IDriver {
         if (tempFuelAmount >= 0) {
             car.startPath();
             car.setFuelAmount(tempFuelAmount);
-            System.out.println("Taxi completed the drive/trip!");
+            LOGGER.info("Taxi completed the drive/trip!");
             passenger.payForTaxi(service);
         } else {
-            System.out.println("The car don't have enough fuel for the trip!");
-            System.out.println("Sending driver to refuel the car");
-            System.out.println("<-------------------------------->");
+            LOGGER.warn("The car don't have enough fuel for the trip!");
             refuelCar(car, service);
         }
     }
