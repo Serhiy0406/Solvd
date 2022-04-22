@@ -51,6 +51,7 @@ public class Car extends Vehicle {
                 "\n" + getWheels() +
                 "\n fuel amount =" + getFuelAmount() +
                 "\n tank volume = " + getTankVolume() +
+                "\n " + category.toString() +
                 "\n}";
     }
 }

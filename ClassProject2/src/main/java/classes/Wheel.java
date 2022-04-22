@@ -38,8 +38,8 @@ public class Wheel {
     @Override
     public String toString() {
         return "Wheel {\n" +
-                " count of wheels : " + getCount() +
-                " season for : " + getSeason() +
+                "\n count of wheels : " + getCount() +
+                "\n season for : " + getSeason() +
                 "\n diameter = " + getDiameter() +
                 "\n}";
     }

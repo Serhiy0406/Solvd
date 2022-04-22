@@ -1,38 +1,31 @@
 package classes;
 
+import enums.CarType;
+
+import interfaces.Drivable;
+
 public class Category {
 
-    private String name;
+//    private String name;
     private int maxPassengerCapacity;
-    private double lengthMeters;
-    private double widthMeters;
+    private CarType carType;
 
     public Category() {
     }
 
-    public Category(String name, int maxPassengerCapacity,
-                    double lengthMeters, double widthMeters) {
-        this.name = name;
-        this.lengthMeters = lengthMeters;
+    public Category(/*String name,*/ int maxPassengerCapacity, CarType carType) {
+//        this.name = name;
         this.maxPassengerCapacity = maxPassengerCapacity;
-        this.widthMeters = widthMeters;
+        this.carType = carType;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setLengthMeters(double lengthMeters) {
-        this.lengthMeters = lengthMeters;
-    }
-
-    public double getLengthMeters() {
-        return lengthMeters;
-    }
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
 
     public void setMaxPassengerCapacity(int maxPassengerCapacity) {
         this.maxPassengerCapacity = maxPassengerCapacity;
@@ -42,21 +35,32 @@ public class Category {
         return maxPassengerCapacity;
     }
 
-    public void setWidthMeters(double widthMeters) {
-        this.widthMeters = widthMeters;
+    public void setCarType(CarType carType) {
+        this.carType = carType;
     }
 
-    public double getWidthMeters() {
-        return widthMeters;
+    public CarType getCarType() {
+        return carType;
     }
 
     @Override
     public String toString() {
+
+        String result;
+
+        Drivable d1=(key)->{ return "This car can be started by " + key; };
+
+        if (getCarType().getValue().equals("Sport car")){
+            result = d1.drive("button");
+        }else{
+            result = d1.drive("key");
+        }
+
         return "Category{\n" +
-                " Name: " + getName() +
+                " Car type: " + getCarType().getValue() +
                 "\n Passenger capacity: " + getMaxPassengerCapacity() +
-                "\n length in meters = " + getLengthMeters() +
-                "\n width in meters = " + getWidthMeters() +
+                "\n Car type by comfort: " + getCarType() +
+                "\n " + result +
                 "\n}";
     }
 }

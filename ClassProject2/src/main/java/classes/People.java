@@ -1,6 +1,7 @@
 package classes;
 
 import exceptions.InvalidStringException;
+
 import org.apache.commons.lang3.StringUtils;
 
 public abstract class People {

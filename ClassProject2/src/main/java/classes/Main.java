@@ -1,8 +1,10 @@
 package classes;
 
+import enums.CarType;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.commons.lang3.RandomUtils;
 
 import java.time.LocalDate;
 
@@ -13,9 +15,8 @@ public class Main {
     public static void main(String[] args) {
         try {
             BasicConfigurator.configure();
-            LOGGER.info("its work");
-            LOGGER.error("We've just greeted the user!");
-            LOGGER.fatal("We've just greeted the user!");
+            LOGGER.info("work started");
+
             Cash cash = new Cash("Card", 25000);
             Passenger passenger = new Passenger("Tom", "Watson", 250, cash);
 
@@ -30,12 +31,18 @@ public class Main {
 
             Fuel diesel = new Fuel("Diesel", 30.5);
             Engine engine = new Engine("someModel", diesel);
-            Wheel wheel = new Wheel("Winter", 50);
+            Wheel wheel = new Wheel("Winter", RandomUtils.nextInt(50, 70));
+            CarType carType =  CarType.VIP;
+            Category category = new Category(5, carType);
 
-            //System.out.println(passenger);
+            Car car = new Car(RandomUtils.nextDouble(30.0, 50.0), RandomUtils.nextDouble(30.0, 50.0), engine,
+                    wheel, "Mercedes", category );
+
             LOGGER.info(passenger.toString());
+            LOGGER.info(Alex.toString());
+            LOGGER.info(car.toString());
+
         } catch (Exception exception) {
-            //System.out.println("Exception: " + exception.getMessage());
             LOGGER.error("Exception: " + exception.getMessage());
         }
     }
