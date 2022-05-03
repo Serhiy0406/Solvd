@@ -4,7 +4,10 @@ import exceptions.InvalidStringException;
 import exceptions.InvalidValueException;
 import org.apache.commons.lang3.StringUtils;
 
-public class Cash {
+import java.util.Objects;
+
+public class Cash implements Comparable {
+
 
     private String type;
     private double amount;
@@ -47,5 +50,27 @@ public class Cash {
                 "\ncash type: " + getType() +
                 "\ncash amount = " + getAmount() +
                 "\n}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cash cash = (Cash) o;
+        return Double.compare(cash.amount, amount) == 0 && Objects.equals(type, cash.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, amount);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if (this.getAmount() == ((Cash) o).getAmount()) {
+            return 0;
+        } else {
+            return this.getAmount() > ((Cash) o).getAmount() ? 1 : -1;
+        }
     }
 }

@@ -7,6 +7,10 @@ import org.apache.logging.log4j.Logger;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -17,8 +21,22 @@ public class Main {
             BasicConfigurator.configure();
             LOGGER.info("work started");
 
-            Cash cash = new Cash("Card", 25000);
-            Passenger passenger = new Passenger("Tom", "Watson", 250, cash);
+            Stream<Cash> cashStream = Stream.of(
+                    new Cash("Card", 54000),
+                    new Cash("Card", 54000),
+                    new Cash("Money", 45000),
+                    new Cash("Card", 40000));
+
+            List<Cash> collect = cashStream.filter(s -> s.getAmount() > 43000)
+                    .sorted().peek(cash -> LOGGER.info(cash.toString()))
+                    .collect(Collectors.toList());
+
+            Optional<Cash> cash = collect.stream().findAny();
+            Passenger passenger = new Passenger();
+
+            if (cash.isPresent()) {
+                passenger = new Passenger("Tom", "Watson", 250, cash.get());
+            }
 
             License license = new License(LocalDate.of(2002, 1, 8),
                     LocalDate.of(2020, 1, 8));
@@ -32,11 +50,11 @@ public class Main {
             Fuel diesel = new Fuel("Diesel", 30.5);
             Engine engine = new Engine("someModel", diesel);
             Wheel wheel = new Wheel("Winter", RandomUtils.nextInt(50, 70));
-            CarType carType =  CarType.VIP;
+            CarType carType = CarType.VIP;
             Category category = new Category(5, carType);
 
             Car car = new Car(RandomUtils.nextDouble(30.0, 50.0), RandomUtils.nextDouble(30.0, 50.0), engine,
-                    wheel, "Mercedes", category );
+                    wheel, "Mercedes", category);
 
             LOGGER.info(passenger.toString());
             LOGGER.info(Alex.toString());

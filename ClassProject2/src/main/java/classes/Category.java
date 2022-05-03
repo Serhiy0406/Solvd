@@ -6,26 +6,16 @@ import interfaces.Drivable;
 
 public class Category {
 
-//    private String name;
     private int maxPassengerCapacity;
     private CarType carType;
 
     public Category() {
     }
 
-    public Category(/*String name,*/ int maxPassengerCapacity, CarType carType) {
-//        this.name = name;
+    public Category(int maxPassengerCapacity, CarType carType) {
         this.maxPassengerCapacity = maxPassengerCapacity;
         this.carType = carType;
     }
-
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
 
     public void setMaxPassengerCapacity(int maxPassengerCapacity) {
         this.maxPassengerCapacity = maxPassengerCapacity;
@@ -48,11 +38,13 @@ public class Category {
 
         String result;
 
-        Drivable d1=(key)->{ return "This car can be started by " + key; };
+        Drivable d1 = (key) -> {
+            return "This car can be started by " + key;
+        };
 
-        if (getCarType().getValue().equals("Sport car")){
+        if (getCarType().getValue().equals("Sport car")) {
             result = d1.drive("button");
-        }else{
+        } else {
             result = d1.drive("key");
         }
 
